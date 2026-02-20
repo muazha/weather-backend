@@ -1,8 +1,10 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors"
 dotenv.config();
 
 const app = express();
+app.use(cors({origin: "https://your-frontend-domain.com"}));
 function validate(value, name) {
     if (value === undefined || value === "" || value === null) {
         return `${name} must be filled`;
